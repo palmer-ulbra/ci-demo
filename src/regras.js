@@ -27,14 +27,14 @@ export const fimDaMatricula = (periodo) => {
 // ── RN-5 · Créditos do semestre ─────────────────────────────────────────────
 const MAX_CREDITOS = 24;
 
-export const creditosDoSemestre = (matriculas) => {
+export let creditosDoSemestre = (matriculas) => {
   return matriculas
     .filter((m) => m.estado === "CONFIRMADA")
     .reduce((total, m) => total + m.creditos, 0);
 };
 
 export const passouDoLimite = (total) => {
-  return total > MAX_CREDITOS;
+  return total > 24;
 };
 
 // ── RN-2 · Pré-requisito ────────────────────────────────────────────────────
